@@ -27,6 +27,12 @@ if (clean) {
   });
 }
 
+!fixed &&
+  !clean &&
+  console.log(
+    "No flags passed, running the leak. \n(make sure if you pass flags to add the '--' prior to the flag \ne.g. `npm run leak -- --fixed`)\n"
+  );
+
 class RandomData {
   constructor(text) {
     this.text = text;
