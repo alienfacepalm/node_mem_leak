@@ -1,6 +1,6 @@
 ## Node Mem Leak
 
-This project is to show a purposeful memory leak in Node and then how to fix it.
+This project is to demonstrate a leak and how to fix it with proper teardown.
 
 Plotting requires Python3 and matplotlib
 
