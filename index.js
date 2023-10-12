@@ -7,10 +7,13 @@ const nonLeakyData = [];
 
 const fs = require("fs");
 const stats = [];
-const fix = !!process.argv.find((arg) => arg === "--fixed");
+const fixed = !!process.argv.find((arg) => arg === "--fixed");
 const clean = !!process.argv.find((arg) => arg === "--clean");
 
+fixed && console.log("Running in FIX mode");
+
 if (clean) {
+  console.log("Cleaning heapdump files...");
   const fs = require("fs");
   const path = require("path");
   const dir = "./";
@@ -44,7 +47,7 @@ function getAndStoreRandomData() {
   leakyData.push(randomObject);
   nonLeakyData.push(randomObject);
 
-  fix && cleanUpData(leakyData, randomObject);
+  fixed && cleanUpData(leakyData, randomObject);
   cleanUpData(nonLeakyData, randomObject);
 }
 
