@@ -23,8 +23,8 @@ Then run it again with the flags to see the fix.
 
 ## Leaking Example
 
-![Memory Leak](public/leak.PNG "Memory Leak")
+![Memory Leak](public/yes-leak.PNG "Memory Leak")
 
 ## Fixed Leak Example
 
-![Fixed Memory Leak](public/leak-fixed.PNG "Fixed Memory Leak")
+![Fixed Memory Leak](public/no-leak.PNG "Fixed Memory Leak")
