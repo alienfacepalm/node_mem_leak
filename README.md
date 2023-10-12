@@ -2,6 +2,10 @@
 
 This project is to show a purposeful memory leak in Node and then how to fix it.
 
+Plotting requires Python3 and matplotlib
+
+`pip install -r requirements.txt`
+
 # Leak and observe
 
 1. `npm i`
@@ -19,3 +23,11 @@ This project is to show a purposeful memory leak in Node and then how to fix it.
 3. Save
 4. Repeat steps 2-7 above
 5. Leak fixed, memory usage is flat
+
+## Leaking Example
+
+![Memory Leak](public/leak.PNG "Memory Leak")
+
+## Fixed Leak Example
+
+![Fixed Memory Leak](public/leak-fixed.PNG "Fixed Memory Leak")
