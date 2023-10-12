@@ -1,11 +1,11 @@
 "use strict";
-
-require("heapdump");
+import * as fs from "fs";
+import * as path from "path";
+import * as heapdump from "heapdump";
 
 const leakyData = [];
 const nonLeakyData = [];
 
-const fs = require("fs");
 const stats = [];
 const fixed = !!process.argv.find((arg) => arg === "--fixed");
 const clean = !!process.argv.find((arg) => arg === "--clean");
@@ -14,8 +14,6 @@ fixed && console.log("Running in FIX mode");
 
 if (clean) {
   console.log("Cleaning heapdump files...");
-  const fs = require("fs");
-  const path = require("path");
   const dir = "./";
   fs.readdir(dir, (error, files) => {
     if (error) throw error;

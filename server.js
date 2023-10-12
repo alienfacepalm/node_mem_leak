@@ -1,6 +1,9 @@
-const express = require("express");
-const fs = require("fs");
+import express from "express";
+import open from "open";
+import fs from "fs";
 const app = express();
+
+const PORT = 3000;
 
 app.use(express.static("public"));
 
@@ -14,6 +17,7 @@ app.get("/data", (req, res) => {
   });
 });
 
-app.listen(3000, () => {
-  console.log("Server running on http://localhost:3000");
+app.listen(PORT, () => {
+  console.log(`Server running on http://localhost:${PORT}`);
+  open(`http://localhost:${PORT}`);
 });
