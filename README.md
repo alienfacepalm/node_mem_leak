@@ -16,7 +16,7 @@ Then run it again with the flags to see the fix.
 1. `npm i`
 2. `npm run leak`
    - `npm run leak -- --fixed` (fix the leak)
-     - `npm run leak -- --clean` (clean heapdump files)
+   - `npm run leak -- --clean` (clean heapdump files)
    - `npm run leak -- --fixed --clean` (fix the leak, clean heapdump files)
 3. `ctrl+c`
 4. `npm run plot`
