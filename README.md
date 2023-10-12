@@ -29,6 +29,8 @@ Then run it again with the flags to see the fix.
 
 ![Fixed Memory Leak](public/no-leak.PNG "Fixed Memory Leak")
 
+## Run Results Bunched Together
+
 NOTE: If you run `npm run leak` and then `npm run leak again` it'll stack. So you will see ALL of the heapdumps over time even after you run `npm run leak -- --fixed`.
 
 ![Stacking Results](public/stacked.PNG "Stacking runs")
