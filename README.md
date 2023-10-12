@@ -22,7 +22,9 @@ Then run it again with the flags to see the fix.
 4. `npm run plot`
 5. `npm run server`
 6. Navigate browser to http://localhost:3000
-7. Observe the leak, it continuously grows
+7. Observe the leak graph of memory over time
+   - If no --fixed flag you'll see up and to the right
+   - if --fixed flag you'll see it flatten out and maintain
 
 ## Leaking Example
 
