@@ -1,14 +1,15 @@
 {
-  "name": "memory-leak-example",
+  "name": "node_mem_leak",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "leak": "node --expose-gc index.js",
     "plot": "./plot.py",
-    "server": "node server.js"
+    "server": "node server.js",
+    "clean": "rm heapdump*"
   },
-  "author": "Alex Kras",
+  "author": "Alex Kras - base project; Brandon Pliska modifications",
   "license": "ISC",
   "dependencies": {
     "d3": "^7.8.5",

@@ -1,31 +1,50 @@
 "use strict";
+
 require("heapdump");
 
-var leakyData = [];
-var nonLeakyData = [];
+const leakyData = [];
+const nonLeakyData = [];
 
-var fs = require("fs");
-var stats = [];
+const fs = require("fs");
+const stats = [];
+const fix = !!process.argv.find((arg) => arg === "--fixed");
+const clean = !!process.argv.find((arg) => arg === "--clean");
 
-class SimpleClass {
+if (clean) {
+  const fs = require("fs");
+  const path = require("path");
+  const dir = "./";
+  fs.readdir(dir, (error, files) => {
+    if (error) throw error;
+    for (const file of files) {
+      if (file.startsWith("heapdump-")) {
+        fs.unlink(path.join(dir, file), (error) => {
+          if (error) throw error;
+        });
+      }
+    }
+  });
+}
+
+class RandomData {
   constructor(text) {
     this.text = text;
   }
 }
 
 function cleanUpData(dataStore, randomObject) {
-  var objectIndex = dataStore.indexOf(randomObject);
+  const objectIndex = dataStore.indexOf(randomObject);
   dataStore.splice(objectIndex, 1);
 }
 
 function getAndStoreRandomData() {
-  var randomData = Math.random().toString();
-  var randomObject = new SimpleClass(randomData);
+  const randomData = Math.random().toString();
+  const randomObject = new RandomData(randomData);
 
   leakyData.push(randomObject);
   nonLeakyData.push(randomObject);
 
-  // cleanUpData(leakyData, randomObject); //<-- Forgot to clean up
+  fix && cleanUpData(leakyData, randomObject);
   cleanUpData(nonLeakyData, randomObject);
 }
 
@@ -41,7 +60,7 @@ function generateHeapDumpAndStats() {
   }
 
   //2. Output Heap stats
-  var heapUsed = process.memoryUsage().heapUsed;
+  const heapUsed = process.memoryUsage().heapUsed;
   stats.push(heapUsed);
   console.log("Program is using " + heapUsed + " bytes of Heap.");
 
@@ -55,7 +74,7 @@ setInterval(generateHeapDumpAndStats, 2000); //Do garbage collection and heap du
 
 //On ctrl+c save the stats and exit
 process.on("SIGINT", function () {
-  var data = JSON.stringify(stats);
+  const data = JSON.stringify(stats);
   fs.writeFile("stats.json", data, function (err) {
     if (err) {
       console.log(err);

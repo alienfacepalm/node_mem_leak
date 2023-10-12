@@ -8,21 +8,17 @@ Plotting requires Python3 and matplotlib
 
 # Leak and observe
 
+First run `npm run leak` w/out options, and finish the steps to see the leak chart.
+
+Then run it again with the flags to see the fix.
+
 1. `npm i`
-2. `npm run leak` -- wait a like 15 seconds or so
+2. `npm run leak` flags [--fixed (fix the leak), --clean (clean up the heapdump files)]
 3. `ctrl+c`
 4. `npm run plot`
 5. `npm run server`
 6. Navigate browser to http://localhost:3000
 7. Observe the leak, it continuously grows
-
-# Fix
-
-1. Open index.js in IDE
-2. Uncomment line 28
-3. Save
-4. Repeat steps 2-7 above
-5. Leak fixed, memory usage is flat
 
 ## Leaking Example
 
