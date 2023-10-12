@@ -1,0 +1,18 @@
+{
+  "name": "memory-leak-example",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "leak": "node --expose-gc index.js",
+    "plot": "./plot.py",
+    "server": "node server.js"
+  },
+  "author": "Alex Kras",
+  "license": "ISC",
+  "dependencies": {
+    "d3": "^7.8.5",
+    "express": "^4.18.2",
+    "heapdump": "^0.3.7"
+  }
+}
