@@ -10,4 +10,3 @@ print("Plotting %s" % ", ".join(map(str, heapSizes)))
 
 plt.plot(heapSizes)
 plt.ylabel("Heap Size")
-plt.show()
