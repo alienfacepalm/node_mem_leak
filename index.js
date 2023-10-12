@@ -25,7 +25,7 @@ function getAndStoreRandomData() {
   leakyData.push(randomObject);
   nonLeakyData.push(randomObject);
 
-  cleanUpData(leakyData, randomObject); //<-- Forgot to clean up
+  // cleanUpData(leakyData, randomObject); //<-- Forgot to clean up
   cleanUpData(nonLeakyData, randomObject);
 }
 
