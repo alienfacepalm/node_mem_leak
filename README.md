@@ -1,6 +1,7 @@
 ## Node Mem Leak
 
 This project is to demonstrate a leak and how to fix it with proper teardown.
+It is based on https://techtldr.com/simple-guide-to-finding-a-javascript-memory-leak-in-node-js/
 
 Plotting requires Python3 and matplotlib
 
