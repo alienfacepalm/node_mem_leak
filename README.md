@@ -17,7 +17,7 @@ Then run it again with the flags to see the fix.
 3. `ctrl+c`
 4. `npm run server`
 5. Navigate browser to http://localhost:3000
-6. Observe the leak graph of memory over time
+6. Observe the leak chart of memory over time
    - If no --fixed flag you'll see up and to the right
    - if --fixed flag you'll see it flatten out and maintain
 
